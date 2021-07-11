@@ -77,7 +77,7 @@ class App extends React.Component{
         <Header/>
         { this.state.display
             ?
-          <ToyForm nextId={this.nextToyId} handleFormSubmit={this.handleFormSubmit} addToyToDom={this.addToyToDom}/>
+          <ToyForm nextId={this.nextToyId} handleFormSubmit={this.handleFormSubmit} addToyToDom={this.addToyToDom} hideDisplay={this.handleClick}/>
             :
           null
         }

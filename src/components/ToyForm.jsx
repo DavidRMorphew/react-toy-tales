@@ -32,6 +32,8 @@ handleFormSubmit = e => {
     .then(resp=>resp.json())
     .then(newToy => {
       this.props.addToyToDom(newToy)
+      this.setState({name: '', image: ''})
+      this.props.hideDisplay()
     })
   }
 }
