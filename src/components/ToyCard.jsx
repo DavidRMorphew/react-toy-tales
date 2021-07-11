@@ -1,19 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class ToyCard extends Component {
+const ToyCard = props => {
+    const {toy, increaseLikeCount, donateToGoodWill} = props
 
-  render() {
     return (
       <div className="card">
-        <h2>{'' /* Toy's Name */}</h2>
-        <img src={'' /* Toy's Image */} alt={'' /* Toy's Name */} className="toy-avatar" />
-        <p>{'' /* Toy's Likes */} Likes </p>
-        <button className="like-btn">Like {'<3'}</button>
-        <button className="del-btn">Donate to GoodWill</button>
+        <h2>{toy.name}</h2>
+        <img src={toy.image} alt={toy.name} className="toy-avatar" />
+        <p>{toy.likes} Likes </p>
+        <button className="like-btn" onClick={()=>increaseLikeCount(toy.id)}>Like {'<3'}</button>
+        <button className="del-btn" onClick={() => donateToGoodWill(toy.id)}>Donate to GoodWill</button>
       </div>
     );
-  }
-
 }
 
 export default ToyCard;
